@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/welcomeFragment2">
+
+    <fragment
+        android:id="@+id/spainFragment"
+        android:name="com.example.mvvmexample.SpainFragment"
+        android:label="Испания"
+        tools:layout="@layout/fragment_spain" />
+    <fragment
+        android:id="@+id/russiaFragment"
+        android:name="com.example.mvvmexample.RussiaFragment"
+        android:label="Россия"
+        tools:layout="@layout/fragment_russia" />
+    <fragment
+        android:id="@+id/portugalFragment"
+        android:name="com.example.mvvmexample.PortugalFragment"
+        android:label="Португалия"
+        tools:layout="@layout/fragment_portugal" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mvvmexample.MainFragment"
+        android:label="Страны"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_spainFragment"
+            app:destination="@id/spainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_russiaFragment"
+            app:destination="@id/russiaFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_portugalFragment"
+            app:destination="@id/portugalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment2"
+        android:name="com.example.mvvmexample.WelcomeFragment"
+        android:label="Приветствие"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MVVMExample</string>
+    <string name="country">Страна</string>
+    <string name="capital">Столица</string>
+    <string name="welcome">Начать</string>
+    <string name="spain">Испания</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
