@@ -33,8 +33,6 @@ class Adapter: RecyclerView.Adapter<RecyclerViewHolder>() {
         holder.countryName.text = country.name
         holder.capitalName.text = country.capital
 
-        getItemId(R.id.imageview)
-
         Picasso
             .get()
             .load(country.img)
