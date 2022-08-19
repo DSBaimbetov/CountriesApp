@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.mvvmexample.Network.MainRepository
 import com.example.mvvmexample.Network.RetrofitService
 import com.example.mvvmexample.databinding.FragmentMainBinding
@@ -26,15 +27,17 @@ class MainFragment : Fragment() {
             MyViewModelFactory(
                 MainRepository(retrofitService)))[
                 MainViewModel::class.java]
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil
-            .inflate(inflater, R.layout.fragment_main, container, false)
+        binding = FragmentMainBinding.inflate(inflater, container, false)
+
+        binding.bindingAdapter = MainFragmentBindingAdapter(
+            navController = findNavController(), context = requireContext()
+        )
 
         val adapter = Adapter()
         binding.recyclerview.adapter = adapter
@@ -55,7 +58,6 @@ class MainFragment : Fragment() {
         }
         viewModel.getAllCountries()
 
-        // Inflate the layout for this fragment
         return binding.root
     }
 }

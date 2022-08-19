@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/welcomeFragment2">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/spainFragment"
@@ -24,7 +24,7 @@
         android:id="@+id/mainFragment"
         android:name="com.example.mvvmexample.MainFragment"
         android:label="Страны"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_spainFragment"
             app:destination="@id/spainFragment" />
@@ -34,14 +34,17 @@
         <action
             android:id="@+id/action_mainFragment_to_portugalFragment"
             app:destination="@id/portugalFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/welcomeFragment2"
-        android:name="com.example.mvvmexample.WelcomeFragment"
-        android:label="Приветствие"
-        tools:layout="@layout/fragment_welcome" >
         <action
-            android:id="@+id/action_welcomeFragment2_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_mainFragment_to_infoDialogFragment"
+            app:destination="@id/infoDialogFragment" />
     </fragment>
+    <dialog
+        android:id="@+id/infoDialogFragment"
+        android:name="com.example.mvvmexample.InfoDialogFragment"
+        android:label="InfoDialogFragment"
+        tools:layout="@layout/main_dialog">
+        <argument
+            android:name="dialogParams"
+            app:argType="com.example.mvvmexample.DialogDto" />
+    </dialog>
 </navigation>
