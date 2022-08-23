@@ -67,7 +67,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rectangle_3"
                 android:minHeight="48dp"
-                android:onClick="@{binding.click}"
+                android:onClick="@{bindingAdapter.click}"
                 android:text="@string/info"
                 android:textColor="@color/white"
                 android:textSize="16sp"
@@ -83,7 +83,7 @@
                 android:text="@string/contacts"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:onClick="@{binding.click}"
+                android:onClick="@{bindingAdapter.click}"
                 android:textStyle="bold" />
         </LinearLayout>
 

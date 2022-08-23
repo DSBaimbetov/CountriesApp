@@ -1,20 +1,19 @@
 package com.example.mvvmexample
 
-import android.opengl.Visibility
-import android.widget.ProgressBar
-import androidx.lifecycle.*
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.mvvmexample.Network.MainRepository
 import com.example.mvvmexample.Network.Model
 import com.example.mvvmexample.Room.Country
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
-import kotlinx.coroutines.flow.Flow
 
 class MainViewModel(
     private val repository: MainRepository
-    ) : ViewModel() {
+) : ViewModel() {
 
     //api
     val countryList = MutableLiveData<List<Model>>()

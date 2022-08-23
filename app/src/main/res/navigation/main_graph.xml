@@ -6,37 +6,16 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
-        android:id="@+id/spainFragment"
-        android:name="com.example.mvvmexample.SpainFragment"
-        android:label="Испания"
-        tools:layout="@layout/fragment_spain" />
-    <fragment
-        android:id="@+id/russiaFragment"
-        android:name="com.example.mvvmexample.RussiaFragment"
-        android:label="Россия"
-        tools:layout="@layout/fragment_russia" />
-    <fragment
-        android:id="@+id/portugalFragment"
-        android:name="com.example.mvvmexample.PortugalFragment"
-        android:label="Португалия"
-        tools:layout="@layout/fragment_portugal" />
-    <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.mvvmexample.MainFragment"
         android:label="Страны"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_mainFragment_to_spainFragment"
-            app:destination="@id/spainFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_russiaFragment"
-            app:destination="@id/russiaFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_portugalFragment"
-            app:destination="@id/portugalFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_infoDialogFragment"
             app:destination="@id/infoDialogFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_countryFragment"
+            app:destination="@id/countryFragment" />
     </fragment>
     <dialog
         android:id="@+id/infoDialogFragment"
@@ -46,5 +25,14 @@
         <argument
             android:name="dialogParams"
             app:argType="com.example.mvvmexample.DialogDto" />
+        <action
+            android:id="@+id/action_infoDialogFragment_to_mainFragment"
+            app:popUpTo="@id/infoDialogFragment"
+            app:popUpToInclusive="true" />
     </dialog>
+    <fragment
+        android:id="@+id/countryFragment"
+        android:name="com.example.mvvmexample.CountryFragment"
+        android:label="Страна"
+        tools:layout="@layout/fragment_country" />
 </navigation>

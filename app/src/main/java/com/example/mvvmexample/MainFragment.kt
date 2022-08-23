@@ -1,10 +1,12 @@
 package com.example.mvvmexample
 
 import android.graphics.Color
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -39,11 +41,17 @@ class MainFragment : Fragment() {
             navController = findNavController(), context = requireContext()
         )
 
+        binding.infoAboutCountry.isVisible = false
+        binding.infoAboutContacts.isVisible = false
+
         val adapter = Adapter()
         binding.recyclerview.adapter = adapter
 
         viewModel.countryList.observe(viewLifecycleOwner) {
             adapter.setCountryList(it)
+
+            binding.infoAboutCountry.isVisible = true
+            binding.infoAboutContacts.isVisible = true
         }
 
         viewModel.errorMessage.observe(viewLifecycleOwner) {
