@@ -1,13 +1,11 @@
 package com.example.mvvmexample
 
 import android.graphics.Color
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -25,9 +23,12 @@ class MainFragment : Fragment() {
 
         val retrofitService = RetrofitService.getInstance()
 
-        viewModel = ViewModelProvider(this,
+        viewModel = ViewModelProvider(
+            this,
             MyViewModelFactory(
-                MainRepository(retrofitService)))[
+                MainRepository(retrofitService)
+            )
+        )[
                 MainViewModel::class.java]
     }
 
@@ -41,8 +42,10 @@ class MainFragment : Fragment() {
             navController = findNavController(), context = requireContext()
         )
 
-        binding.infoAboutCountry.isVisible = false
-        binding.infoAboutContacts.isVisible = false
+        binding.apply {
+            infoAboutCountry.isVisible = false
+            infoAboutContacts.isVisible = false
+        }
 
         val adapter = Adapter()
         binding.recyclerview.adapter = adapter
@@ -64,7 +67,6 @@ class MainFragment : Fragment() {
             snackbar.setBackgroundTint(Color.BLUE)
             snackbar.show()
         }
-        viewModel.getAllCountries()
 
         return binding.root
     }

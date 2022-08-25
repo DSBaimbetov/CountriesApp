@@ -16,14 +16,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        android:background="@drawable/android_1">
-
+        android:background="@drawable/android_1"
+        tools:context=".MainActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="458dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +32,7 @@
             tools:listitem="@layout/adapter_country" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="195dp"
@@ -54,12 +54,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/rectangle_3"
                 android:minHeight="48dp"
+                android:onClick="@{bindingAdapter.click}"
                 android:text="@string/info"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:onClick="@{bindingAdapter.click}"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/info_about_contacts"
@@ -68,11 +67,12 @@
                 android:layout_weight="1"
                 android:background="@drawable/rectangle_3"
                 android:minHeight="48dp"
+                android:onClick="@{bindingAdapter.click}"
                 android:text="@string/contacts"
                 android:textColor="@color/white"
-                android:onClick="@{bindingAdapter.click}"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

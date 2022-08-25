@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.mvvmexample.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -28,11 +30,18 @@ class MainActivity : AppCompatActivity() {
 
         receiver = AirplaneModeChangeReceiver()
 
+        setupBottomNavMenu(navController)
+
         // Фильтр намерений полезен для определения того, какие приложения хотят получать
         // какие намерения, поскольку здесь мы хотим реагировать на изменение режима полета
         IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
             registerReceiver(receiver, it)
         }
+    }
+
+    private fun setupBottomNavMenu(navController: NavController) {
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNav?.setupWithNavController(navController)
     }
 
     // Вызывается всякий раз, когда пользователь выбирает перемещение вверх

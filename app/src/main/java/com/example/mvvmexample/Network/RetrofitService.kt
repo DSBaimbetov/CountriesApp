@@ -7,13 +7,13 @@ import retrofit2.http.GET
 
 interface RetrofitService {
 
-    @GET("T0SG")
-    fun getAllCountries() : Call<List<Model>>
+    @GET("YOKG")
+    fun getAllCountries(): Call<List<Model>>
 
     companion object {
         private var retrofitService: RetrofitService? = null
 
-        fun getInstance() : RetrofitService {
+        fun getInstance(): RetrofitService {
             if (retrofitService == null) {
                 val retrofit = Retrofit.Builder()
                     .baseUrl("https://jsonkeeper.com/b/")

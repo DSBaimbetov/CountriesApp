@@ -2,11 +2,8 @@ package com.example.mvvmexample
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.mvvmexample.Network.MainRepository
 import com.example.mvvmexample.Network.Model
-import com.example.mvvmexample.Room.Country
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,6 +15,10 @@ class MainViewModel(
     //api
     val countryList = MutableLiveData<List<Model>>()
     val errorMessage = MutableLiveData<String>()
+
+    init {
+        getAllCountries()
+    }
 
     //api
     fun getAllCountries() {
