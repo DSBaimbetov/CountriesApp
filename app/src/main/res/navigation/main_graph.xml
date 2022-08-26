@@ -37,10 +37,9 @@
         android:id="@+id/countryFragment"
         android:name="com.example.mvvmexample.CountryFragment"
         android:label="Страна"
-        tools:layout="@layout/fragment_country" />
-    <fragment
-        android:id="@+id/exampleFragment"
-        android:name="com.example.mvvmexample.ExampleFragment"
-        android:label="fragment_example"
-        tools:layout="@layout/fragment_example" />
+        tools:layout="@layout/fragment_country" >
+        <argument
+            android:name="model"
+            app:argType="com.example.mvvmexample.Network.Model" />
+    </fragment>
 </navigation>

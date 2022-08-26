@@ -10,4 +10,5 @@
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="null_string">""</string>
     <string name="deeplink">Deeplink</string>
+    <string name="mainMenu">Главная страница</string>
 </resources>

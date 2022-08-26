@@ -6,11 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.transform.CircleCropTransformation
-import coil.transform.RoundedCornersTransformation
 import com.example.mvvmexample.Network.Model
 
 class Adapter : RecyclerView.Adapter<RecyclerViewHolder>() {
@@ -42,18 +40,25 @@ class Adapter : RecyclerView.Adapter<RecyclerViewHolder>() {
             imageView.load(country.img)
         }
 
-        when (countries[position]) {
-            countries[position] -> holder.itemView.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.action_mainFragment_to_countryFragment)
-            )
-        }
+        holder.countries = country
     }
 
     override fun getItemCount() = countries.size
 }
 
-class RecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class RecyclerViewHolder(itemView: View, var countries: Model? = null) :
+    RecyclerView.ViewHolder(itemView) {
     val imageView: ImageView = itemView.findViewById(R.id.imageview)
     val countryName: TextView = itemView.findViewById(R.id.countryName)
     val capitalName: TextView = itemView.findViewById(R.id.capitalName)
+
+    init {
+        itemView.setOnClickListener {
+            countries?.let { countries ->
+                val directions =
+                    MainFragmentDirections.actionMainFragmentToCountryFragment(countries)
+                itemView.findNavController().navigate(directions)
+            }
+        }
+    }
 }
