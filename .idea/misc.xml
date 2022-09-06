@@ -13,16 +13,20 @@
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/activity_name.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/fragment_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/adapter_country.xml" value="0.22" />
         <entry key="app/src/main/res/layout/adapter_movie.xml" value="0.12" />
         <entry key="app/src/main/res/layout/bottom_nav_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.12" />
         <entry key="app/src/main/res/layout/deep_link_appwidget.xml" value="0.12" />
         <entry key="app/src/main/res/layout/fragment_country.xml" value="0.15755208333333334" />
         <entry key="app/src/main/res/layout/fragment_example.xml" value="0.29243266353142366" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.14208333333333334" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.178125" />
         <entry key="app/src/main/res/layout/fragment_portugal.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_russia.xml" value="0.13160333642261354" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_spain.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.22" />
         <entry key="app/src/main/res/layout/main_dialog.xml" value="0.2" />
