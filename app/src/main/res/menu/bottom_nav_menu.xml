@@ -4,8 +4,16 @@
         android:id="@+id/mainFragment"
         android:title="@string/mainMenu"
         android:icon="@drawable/ic_main_home"/>
-<!--    <item-->
-<!--        android:id="@+id/"-->
-<!--        android:title="@string/contacts"-->
-<!--        android:icon="@drawable/ic_phone"/>-->
+    <item
+        android:id="@+id/infoFragment"
+        android:title="@string/info"
+        android:icon="@drawable/ic_info_24"/>
+    <item
+        android:id="@+id/settingFragment"
+        android:title="@string/setting"
+        android:icon="@drawable/ic_settings_24"/>
+    <item
+        android:id="@+id/contactsFragment"
+        android:title="@string/contacts"
+        android:icon="@drawable/ic_contacts_24"/>
 </menu>

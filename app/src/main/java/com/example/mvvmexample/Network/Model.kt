@@ -7,7 +7,8 @@ import kotlinx.parcelize.Parcelize
 data class Model(
     val capital: String,
     val img: String,
-    val name: String
+    val name: String,
+    val text: String
 ): Parcelable
 //{
 //    val description: String

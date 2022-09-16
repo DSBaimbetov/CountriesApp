@@ -22,29 +22,31 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="0dp"
-            android:layout_height="458dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:spanCount="2"
             tools:itemCount="3"
-            tools:listitem="@layout/adapter_country" />
+            tools:listitem="@layout/adapter_country">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="195dp"
-            android:layout_marginTop="48dp"
             android:layout_marginEnd="195dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerview"
-            app:layout_constraintVertical_bias="0.098">
+            app:layout_constraintTop_toBottomOf="@+id/recyclerview">
 
             <Button
                 android:id="@+id/info_about_country"
@@ -54,7 +56,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rectangle_3"
                 android:minHeight="48dp"
-                android:onClick="@{bindingAdapter.click}"
+                android:onClick="@{bindingAdapter::click}"
                 android:text="@string/info"
                 android:textColor="@color/white"
                 android:textSize="16sp"
@@ -67,7 +69,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rectangle_3"
                 android:minHeight="48dp"
-                android:onClick="@{bindingAdapter.click}"
+                android:onClick="@{bindingAdapter::click}"
                 android:text="@string/contacts"
                 android:textColor="@color/white"
                 android:textSize="16sp"

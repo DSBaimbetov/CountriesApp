@@ -1,6 +1,5 @@
 package com.example.mvvmexample
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +14,6 @@ class Adapter : RecyclerView.Adapter<RecyclerViewHolder>() {
 
     private var countries = mutableListOf<Model>()
 
-    @SuppressLint("NotifyDataSetChanged")
     fun setCountryList(countries: List<Model>) {
         this.countries = countries.toMutableList()
         notifyDataSetChanged()

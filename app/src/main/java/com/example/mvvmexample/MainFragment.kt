@@ -2,10 +2,8 @@ package com.example.mvvmexample
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.core.view.isVisible
+import android.view.*
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -28,8 +26,9 @@ class MainFragment : Fragment() {
             MyViewModelFactory(
                 MainRepository(retrofitService)
             )
-        )[
-                MainViewModel::class.java]
+        )[MainViewModel::class.java]
+
+
     }
 
     override fun onCreateView(
@@ -42,23 +41,14 @@ class MainFragment : Fragment() {
             navController = findNavController(), context = requireContext()
         )
 
-        binding.apply {
-            infoAboutCountry.isVisible = false
-            infoAboutContacts.isVisible = false
-        }
-
         val adapter = Adapter()
         binding.recyclerview.adapter = adapter
 
         viewModel.countryList.observe(viewLifecycleOwner) {
             adapter.setCountryList(it)
-
-            binding.infoAboutCountry.isVisible = true
-            binding.infoAboutContacts.isVisible = true
         }
 
         viewModel.errorMessage.observe(viewLifecycleOwner) {
-
             val snackbar = Snackbar.make(
                 requireView(),
                 "Не удалось получить данные или не подключен интернет",

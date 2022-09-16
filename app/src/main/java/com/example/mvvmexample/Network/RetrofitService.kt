@@ -4,10 +4,12 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.HTTP
+import retrofit2.http.POST
 
 interface RetrofitService {
 
-    @GET("YOKG")
+    @GET("0cFMmd")
     fun getAllCountries(): Call<List<Model>>
 
     companion object {
@@ -16,7 +18,7 @@ interface RetrofitService {
         fun getInstance(): RetrofitService {
             if (retrofitService == null) {
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("https://jsonkeeper.com/b/")
+                    .baseUrl("https://api.jsonserve.com/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 

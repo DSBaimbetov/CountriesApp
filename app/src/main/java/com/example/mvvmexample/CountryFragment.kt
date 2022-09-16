@@ -31,5 +31,6 @@ class CountryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.countryText.text = country.name
         binding.countryFlag.load(country.img)
+        binding.countryInfo.text = country.text
     }
 }

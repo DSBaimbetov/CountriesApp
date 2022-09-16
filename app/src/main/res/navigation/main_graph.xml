@@ -42,4 +42,19 @@
             android:name="model"
             app:argType="com.example.mvvmexample.Network.Model" />
     </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.mvvmexample.InfoFragment"
+        android:label="Информация"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.mvvmexample.SettingFragment"
+        android:label="Настройки"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.example.mvvmexample.ContactsFragment"
+        android:label="Контакты"
+        tools:layout="@layout/fragment_contacts" />
 </navigation>
