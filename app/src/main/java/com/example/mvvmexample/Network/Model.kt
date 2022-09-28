@@ -9,7 +9,7 @@ data class Model(
     val img: String,
     val name: String,
     val text: String
-): Parcelable
+    ) : Parcelable
 //{
 //    val description: String
 //    get() = "$name is $capital"

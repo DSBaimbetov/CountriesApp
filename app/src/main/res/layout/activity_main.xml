@@ -35,7 +35,5 @@
             app:layout_constraintVertical_bias="1.0"
             app:navGraph="@navigation/main_graph" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

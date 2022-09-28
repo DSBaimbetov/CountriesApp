@@ -4,12 +4,10 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.HTTP
-import retrofit2.http.POST
 
 interface RetrofitService {
 
-    @GET("0cFMmd")
+    @GET("vMt9ml")
     fun getAllCountries(): Call<List<Model>>
 
     companion object {
@@ -22,7 +20,6 @@ interface RetrofitService {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
-                // создание экземпляра для класса API
                 retrofitService = retrofit.create(RetrofitService::class.java)
             }
             return retrofitService!!

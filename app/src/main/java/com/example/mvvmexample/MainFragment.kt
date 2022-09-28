@@ -2,8 +2,9 @@ package com.example.mvvmexample
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.*
-import android.widget.SearchView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -21,14 +22,13 @@ class MainFragment : Fragment() {
 
         val retrofitService = RetrofitService.getInstance()
 
+
         viewModel = ViewModelProvider(
             this,
             MyViewModelFactory(
                 MainRepository(retrofitService)
             )
         )[MainViewModel::class.java]
-
-
     }
 
     override fun onCreateView(
@@ -38,7 +38,7 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
         binding.bindingAdapter = MainFragmentBindingAdapter(
-            navController = findNavController(), context = requireContext()
+            findNavController(), requireContext()
         )
 
         val adapter = Adapter()
@@ -46,6 +46,7 @@ class MainFragment : Fragment() {
 
         viewModel.countryList.observe(viewLifecycleOwner) {
             adapter.setCountryList(it)
+            binding.progressBar.visibility = View.GONE
         }
 
         viewModel.errorMessage.observe(viewLifecycleOwner) {
@@ -56,6 +57,8 @@ class MainFragment : Fragment() {
             )
             snackbar.setBackgroundTint(Color.BLUE)
             snackbar.show()
+
+            binding.progressBar.visibility = View.VISIBLE
         }
 
         return binding.root

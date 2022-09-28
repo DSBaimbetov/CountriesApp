@@ -22,15 +22,15 @@ class MainViewModel(
 
     //api
     fun getAllCountries() {
-        val response = repository.getAllCountries()
-        response.enqueue(object : Callback<List<Model>> {
-            override fun onResponse(call: Call<List<Model>>, response: Response<List<Model>>) {
-                countryList.postValue(response.body())
-            }
+            val response = repository.getAllCountries()
+            response.enqueue(object : Callback<List<Model>> {
+                override fun onResponse(call: Call<List<Model>>, response: Response<List<Model>>) {
+                    countryList.postValue(response.body())
+                }
 
-            override fun onFailure(call: Call<List<Model>>, t: Throwable) {
-                errorMessage.postValue(t.message)
-            }
-        })
+                override fun onFailure(call: Call<List<Model>>, t: Throwable) {
+                    errorMessage.postValue(t.message)
+                }
+            })
     }
 }

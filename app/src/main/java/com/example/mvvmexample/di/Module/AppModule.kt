@@ -1,7 +1,6 @@
 package com.example.mvvmexample.di.Module
 
 import com.example.mvvmexample.Network.RetrofitService
-import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
 /**
